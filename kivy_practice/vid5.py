@@ -5,13 +5,16 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
 
 
 class MyGridLayout(Widget):
 
-    def press(self, instance):
+    name = ObjectProperty(None)
+
+    def press(self):
         name = self.name.text
-        self.add_widget(Label(text=f'Hello {name} whats crackin'))
+        print(f'Hello {name} whats crackin')
         self.name.text = ''
 
 

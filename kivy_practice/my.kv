@@ -1,6 +1,10 @@
 <MyGridLayout>
+
+    name:name
+
     GridLayout:
         cols:1
+        size: root.width, root.height
 
         GridLayout:
             cols:2
@@ -8,6 +12,7 @@
             Label:
                 text: "Name"
             TextInput:
+                id:name
                 multiline:False
 
             Label:
@@ -17,8 +22,11 @@
 
             Label:
                 text: "Name"
+
             TextInput:
                 multiline:False
 
         Button:
             text: "Submit"
+            font_size: 32
+            on_press: root.press()
