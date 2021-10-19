@@ -3,7 +3,9 @@ from kivy.uix.widget import Widget
 
 
 class Interface(Widget):
-    pass
+
+    def On_Enter_Pressed(self):
+        print('Enter has been pressed! \n Good logic!')
 
 
 class TestApp(App):
