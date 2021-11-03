@@ -1,0 +1,19 @@
+Game:
+<Game>:
+    orientation: 'vertical'
+    ScrollView:
+        do_scroll_y: True
+        Buttons:
+            id: stacker
+            padding: dp(10)
+            spacing: dp(10)
+            size_hint: 1, None
+            height: self.minimum_height
+    BoxLayout:
+        size_hint: 1, 0.2
+        Button:
+            text: 'create'
+            on_press: root.create_btn(stacker)
+        Button:
+            text: 'remove'
+            on_press: root.rmv_btn(stacker)
