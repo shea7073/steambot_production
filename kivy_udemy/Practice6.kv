@@ -1,0 +1,17 @@
+LogicalInterface:
+
+<LogicalInterface>:
+    orientation: "vertical"
+    Button:
+        text: "Press Me!"
+        on_press: root.OnPressing(label, input)
+        on_release: root.OnRelease(label, input)
+
+    Label:
+        id: label
+        text: "hello world..."
+
+    TextInput:
+        id: input
+        text: 'Please enter equation'
+        multiline: False
