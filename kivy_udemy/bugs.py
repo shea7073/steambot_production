@@ -1,3 +1,5 @@
+# I, Sean Shea, did not write this code. This was found on stack overflow as a fix for an error in kivy
+# regarding as weak reference
 class WeakMethod:
     '''Implementation of a
     `weakref <http://en.wikipedia.org/wiki/Weak_reference>`_
