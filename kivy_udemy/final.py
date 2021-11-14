@@ -2,6 +2,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivymd.app import MDApp
 from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
+import bugs
 
 
 class Main(BoxLayout):
@@ -29,7 +30,10 @@ class Data(BoxLayout):
         self.add_widget(d)
 
 class finish(MDApp):
-    pass
+    def build(self):
+        self.title = 'SteamBot'
+        return Main()
 
 
+bugs.fixBugs()
 finish().run()
