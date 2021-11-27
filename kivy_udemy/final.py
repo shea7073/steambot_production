@@ -29,11 +29,12 @@ class Data(BoxLayout):
         )
         self.add_widget(d)
 
-class finish(MDApp):
+
+class Finish(MDApp):
     def build(self):
         self.title = 'SteamBot'
         return Main()
 
 
 bugs.fixBugs()
-finish().run()
+Finish().run()
