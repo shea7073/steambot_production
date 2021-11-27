@@ -84,10 +84,14 @@ def data_insert(list_dics):
     conn.close()
 
 
-if os.path.exists("output.json"):
-    os.remove("output.json")
-process.crawl(Test2Spider)
-process.start()
-ready = clean_data('output.json')
-data_insert(ready)
+def scrape():
+    if os.path.exists("output.json"):
+        os.remove("output.json")
+    process.crawl(Test2Spider)
+    process.start()
+    ready = clean_data('output.json')
+    data_insert(ready)
 
+
+if __name__ == '__main__':
+    scrape()
