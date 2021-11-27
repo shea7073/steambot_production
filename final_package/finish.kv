@@ -33,7 +33,7 @@ Main:
         Button:
             size_hint: .3, 1
             text: 'Refresh'
-            on_press: app.recreate()
+            on_press:
         Label:
             text: 'By: Sean Shea'
             font_size: 32
@@ -46,7 +46,7 @@ Main:
 
 
     Data:
-        id: data_table
+        id: 'data_table'
         background_color: (27/255, 40/255, 56/255, 1)
         canvas.before:
             Color:

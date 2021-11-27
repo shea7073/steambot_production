@@ -13,33 +13,18 @@ import scraper
 Window.size = 1000, 600
 
 
-def on_sale():
+def load_data(state):
     row_data = []
     conn = sqlite3.connect('games.db')
     c = conn.cursor()
-    c.execute("SELECT * FROM top_sellers WHERE discount IS NOT NULL")
-    records = c.fetchall()
-    for row in records:
-        row_data.append(row)
-    return row_data
-
-
-def overwhelm():
-    row_data = []
-    conn = sqlite3.connect('games.db')
-    c = conn.cursor()
-    c.execute("SELECT * FROM top_sellers WHERE word_score = 'Overwhelmingly Positive<'")
-    records = c.fetchall()
-    for row in records:
-        row_data.append(row)
-    return row_data
-
-
-def load_data():
-    row_data = []
-    conn = sqlite3.connect('games.db')
-    c = conn.cursor()
-    c.execute("SELECT * FROM top_sellers")
+    if state == 1:
+        c.execute("SELECT * FROM top_sellers")
+    elif state == 2:
+        c.execute("SELECT * FROM top_sellers WHERE word_score = 'Overwhelmingly Positive<'")
+    elif state == 3:
+        c.execute("SELECT * FROM top_sellers WHERE discount IS NOT NULL")
+    else:
+        print("State Error")
     records = c.fetchall()
     for row in records:
         row_data.append(row)
@@ -54,14 +39,8 @@ class Data(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        if state == 1:
-            row_data = load_data()
-        elif state == 2:
-            row_data = overwhelm()
-        elif state == 3:
-            row_data = on_sale()
-        else:
-            print('error')
+        global state
+        row_data = load_data(state)
 
         d = MDDataTable(
             size_hint=(0.85, 0.85),
