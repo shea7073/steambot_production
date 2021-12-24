@@ -1,3 +1,8 @@
+# DISCLAIMER THIS CODE WAS FROM GITHUB AND
+# REPRESENTS THE ONLY CODE IN THE PROJECT THAT IS UNORIGINAL
+# tHIS WAS ADOPTED TO FIX A WINDOW ISSUE WITH WINDOWS AND KIVY
+
+
 class WeakMethod:
     '''Implementation of a
     `weakref <http://en.wikipedia.org/wiki/Weak_reference>`_

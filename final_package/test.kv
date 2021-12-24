@@ -1,0 +1,56 @@
+Main:
+<Main>:
+
+    orientation: 'vertical'
+
+    Label:
+        id: title
+        text: "PAGE 2"
+        font_name: 'OLDENGL.TTF'
+        font_size: 54
+        color: (199/255, 213/255, 224/255, 1)
+        background_color: (27/255, 40/255, 56/255, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        size_hint: 1, 0.2
+
+    BoxLayout:
+        #spacing: 150
+        background_color: (27/255, 40/255, 56/255, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        padding: [10, 0, 10, 0]
+        size_hint: 1, 0.1
+        orientation: 'horizontal'
+        Button:
+            size_hint: .3, 1
+            text: 'Refresh'
+            on_press: root.recreate()
+        Label:
+            text: 'By: Sean Shea'
+            font_size: 32
+            font_name: 'OLDENGL.TTF'
+            color: (199/255, 213/255, 224/255, 1)
+        Spinner:
+            size_hint: .3, 1
+            text: 'Choose Filter'
+            values: ['On Sale', 'Best Rated']
+
+
+    Data:
+        id: 'data_table'
+        background_color: (27/255, 40/255, 56/255, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos

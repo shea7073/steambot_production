@@ -1,56 +1,202 @@
-Main:
-<Main>:
+WindowManager:
+    FirstWindow:
+    SecondWindow:
+    ThirdWindow:
 
-    orientation: 'vertical'
+<FirstWindow>:
 
-    Label:
-        id: title
-        text: "Welcome to SteamBot"
-        font_name: 'OLDENGL.TTF'
-        font_size: 54
-        color: (199/255, 213/255, 224/255, 1)
-        background_color: (27/255, 40/255, 56/255, 1)
-        canvas.before:
-            Color:
-                rgba: self.background_color
-            Rectangle:
-                size: self.size
-                pos: self.pos
-        size_hint: 1, 0.2
+    name: 'Top Sellers'
+    BoxLayout:
+
+        orientation: 'vertical'
+
+        Label:
+            id: title
+            text: "Welcome to SteamBot"
+            font_name: 'OLDENGL.TTF'
+            font_size: 54
+            color: (199/255, 213/255, 224/255, 1)
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            size_hint: 1, 0.2
+
+        BoxLayout:
+            #spacing: 150
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            padding: [10, 0, 10, 0]
+            size_hint: 1, 0.1
+            orientation: 'horizontal'
+            Button:
+                size_hint: .2, 1
+                text: 'Top Sellers'
+                on_press: app.root.current = 'Top Sellers'
+            Button:
+                size_hint: .2, 1
+                text: 'Best Rated'
+                on_press: app.root.current = 'Best Rated'
+            Label:
+                text: 'By: Sean Shea'
+                font_size: 32
+                font_name: 'OLDENGL.TTF'
+                color: (199/255, 213/255, 224/255, 1)
+            Button:
+                size_hint: .2, 1
+                text: 'On Sale'
+                on_press: app.root.current = 'On Sale'
+            Button:
+                size_hint: .2, 1
+                text: 'Refresh'
+
+        Data1:
+            id: 'data_table'
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+
+<SecondWindow>:
+    name: 'Best Rated'
 
     BoxLayout:
-        #spacing: 150
-        background_color: (27/255, 40/255, 56/255, 1)
-        canvas.before:
-            Color:
-                rgba: self.background_color
-            Rectangle:
-                size: self.size
-                pos: self.pos
-        padding: [10, 0, 10, 0]
-        size_hint: 1, 0.1
-        orientation: 'horizontal'
-        Button:
-            size_hint: .3, 1
-            text: 'Refresh'
-            on_press:
+
+        orientation: 'vertical'
+
         Label:
-            text: 'By: Sean Shea'
-            font_size: 32
+            id: title
+            text: "Welcome to SteamBot"
             font_name: 'OLDENGL.TTF'
+            font_size: 54
             color: (199/255, 213/255, 224/255, 1)
-        Spinner:
-            size_hint: .3, 1
-            text: 'Choose Filter'
-            values: ['On Sale', 'Best Rated']
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            size_hint: 1, 0.2
+
+        BoxLayout:
+            #spacing: 150
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            padding: [10, 0, 10, 0]
+            size_hint: 1, 0.1
+            orientation: 'horizontal'
+            Button:
+                size_hint: .3, 1
+                text: 'Top Sellers'
+                on_press: app.root.current = 'Top Sellers'
+            Button:
+                size_hint: .3, 1
+                text: 'Best Rated'
+                on_press: app.root.current = 'Best Rated'
+            Label:
+                text: 'By: Sean Shea'
+                font_size: 32
+                font_name: 'OLDENGL.TTF'
+                color: (199/255, 213/255, 224/255, 1)
+            Button:
+                size_hint: .3, 1
+                text: 'On Sale'
+                on_press: app.root.current = 'On Sale'
+            Button:
+                size_hint: .2, 1
+                text: 'Refresh'
 
 
-    Data:
-        id: 'data_table'
-        background_color: (27/255, 40/255, 56/255, 1)
-        canvas.before:
-            Color:
-                rgba: self.background_color
-            Rectangle:
-                size: self.size
-                pos: self.pos
+        Data2:
+            id: 'data_table'
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+
+<ThirdWindow>:
+    name: 'On Sale'
+    BoxLayout:
+
+        orientation: 'vertical'
+
+        Label:
+            id: title
+            text: "Welcome to SteamBot"
+            font_name: 'OLDENGL.TTF'
+            font_size: 54
+            color: (199/255, 213/255, 224/255, 1)
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            size_hint: 1, 0.2
+
+        BoxLayout:
+            #spacing: 150
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            padding: [10, 0, 10, 0]
+            size_hint: 1, 0.1
+            orientation: 'horizontal'
+            Button:
+                size_hint: .3, 1
+                text: 'Top Sellers'
+                on_press: app.root.current = 'Top Sellers'
+            Button:
+                size_hint: .3, 1
+                text: 'Best Rated'
+                on_press: app.root.current = 'Best Rated'
+
+            Label:
+                text: 'By: Sean Shea'
+                font_size: 32
+                font_name: 'OLDENGL.TTF'
+                color: (199/255, 213/255, 224/255, 1)
+            Button:
+                size_hint: .3, 1
+                text: 'On Sale'
+                on_press: app.root.current = 'On Sale'
+            Button:
+                size_hint: .2, 1
+                text: 'Refresh'
+
+        Data3:
+            id: 'data_table'
+            background_color: (27/255, 40/255, 56/255, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
